@@ -21,4 +21,4 @@
 	        '{core_path}components/customDelivery/model/postcalcEMS/postcalcems.php'
 	    );
 	}
-соответственно
+После этого добавив новые методы доставки в настройках minishop2 и указав нужный класс обработчика: **CDEKdelivery**,**PostcalcPRdelivery** или **PostcalcEMSdelivery** соответственно
