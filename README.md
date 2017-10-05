@@ -1,5 +1,5 @@
 Автоматический расчет доставки СДЭК, Почты России и EMS  
-Это дополнение к статьи на [modx.pro](https://modx.pro/topic/13418/ "Перейти на сайт") 
+Это дополнение к статьи на [modx.pro](https://modx.pro/howto/13418-the-correct-calculation-of-shipping-sdek-pr-ems-part-1/ "Перейти на сайт") 
  
 # Установка  
 
