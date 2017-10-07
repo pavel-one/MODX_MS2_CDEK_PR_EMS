@@ -8,7 +8,7 @@
 
 ***
 	if ($miniShop2 = $modx->getService('miniShop2')) {
-	    $miniShop2->addService('delivery', 'CDEKdelivery',
+	    $miniShop2->addService('delivery', 'msDeliveryHandlerCDEK',
 	        '{core_path}components/customDelivery/model/cdek/CDEK.php'
 	    );
 	}
@@ -25,7 +25,7 @@
 	    );
 	}
 
-После этого добавив новые методы доставки в настройках minishop2 и указав нужный класс обработчика: **CDEKdelivery**,**PostcalcPRdelivery** или **PostcalcEMSdelivery** соответственно
+После этого добавив новые методы доставки в настройках minishop2 и указав нужный класс обработчика: **msDeliveryHandlerCDEK**,**PostcalcPRdelivery** или **PostcalcEMSdelivery** соответственно
 
 # Внимание
 
@@ -35,7 +35,7 @@
 
 ***
 	if ($miniShop2 = $modx->getService('miniShop2')) {
-	    $miniShop2->removeService('payment', 'CDEKdelivery');
+	    $miniShop2->removeService('payment', 'msDeliveryHandlerCDEK');
 	}
 ***
 	if ($miniShop2 = $modx->getService('miniShop2')) {
