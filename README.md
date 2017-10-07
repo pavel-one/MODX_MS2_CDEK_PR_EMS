@@ -14,18 +14,18 @@
 	}
 ***
 	if ($miniShop2 = $modx->getService('miniShop2')) {
-	    $miniShop2->addService('delivery', 'PostcalcPRdelivery',
+	    $miniShop2->addService('delivery', 'postCalcDelivery',
 	        '{core_path}components/customDelivery/model/postcalc/postcalc.php'
 	    );
 	}
 ***
 	if ($miniShop2 = $modx->getService('miniShop2')) {
-	    $miniShop2->addService('delivery', 'PostcalcEMSdelivery',
+	    $miniShop2->addService('delivery', 'postCalcDeliveryEms',
 	        '{core_path}components/customDelivery/model/postcalcEMS/postcalcems.php'
 	    );
 	}
 
-После этого добавив новые методы доставки в настройках minishop2 и указав нужный класс обработчика: **msDeliveryHandlerCDEK**,**PostcalcPRdelivery** или **PostcalcEMSdelivery** соответственно
+После этого добавив новые методы доставки в настройках minishop2 и указав нужный класс обработчика: **msDeliveryHandlerCDEK**,**postCalcDelivery** или **postCalcDeliveryEms** соответственно
 
 # Внимание
 
@@ -39,9 +39,9 @@
 	}
 ***
 	if ($miniShop2 = $modx->getService('miniShop2')) {
-	    $miniShop2->removeService('payment', 'PostcalcPRdelivery');
+	    $miniShop2->removeService('payment', 'postCalcDelivery');
 	}
 ***
 	if ($miniShop2 = $modx->getService('miniShop2')) {
-	    $miniShop2->removeService('payment', 'PostcalcEMSdelivery');
+	    $miniShop2->removeService('payment', 'postCalcDeliveryEms');
 	}
