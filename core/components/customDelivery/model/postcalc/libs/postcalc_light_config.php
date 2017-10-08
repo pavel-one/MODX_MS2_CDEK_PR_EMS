@@ -140,4 +140,4 @@ $arrPostcalcConfig=array(
     ),
 );
 
-define('POSTCALC_CONF', $arrPostcalcConfig);
+define('POSTCALC_CONF', serialize($arrPostcalcConfig));
