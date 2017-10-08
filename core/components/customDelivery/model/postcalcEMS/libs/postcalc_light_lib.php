@@ -61,7 +61,7 @@ require_once 'postcalc_light_config.php';
 
 function postcalc_request($From, $To, $Weight, $Valuation=0, $Country='RU')
 {
-    $arrPostcalcConfig = POSTCALC_CONF;
+    $arrPostcalcConfig = unserialize(POSTCALC_CONF);
     //exit(print_r($arrPostcalcConfig));
     extract($arrPostcalcConfig, EXTR_PREFIX_ALL, 'config');
     // Обязательно! Проверяем данные - больше всего ошибочных запросов из-за неверных значений веса и оценки,
@@ -269,7 +269,7 @@ function postcalc_get_default_ops( $FromTo )
  * 
  */
 function postcalc_arr_from_txt($src_txt, $search = '', $limit = 0){
-     $arrPostcalcConfig = POSTCALC_CONF;
+     $arrPostcalcConfig = unserialize(POSTCALC_CONF);
      extract($arrPostcalcConfig, EXTR_PREFIX_ALL, 'config');
      $arr=array();
      // === Источник - таблица mysql
@@ -418,7 +418,7 @@ return $Out;
  */
 function postcalc_autocomplete($post_index, $limit = 10)
 {
-    $arrPostcalcConfig = POSTCALC_CONF;
+    $arrPostcalcConfig = unserialize(POSTCALC_CONF);
     $Charset = $arrPostcalcConfig['cs'];
     $arr = array();
     // Не менее 3 начальных символов должны быть цифрами
@@ -462,10 +462,10 @@ function postcalc_autocomplete($post_index, $limit = 10)
  * @return array
  */
 function postcalc_get_stat_arr() {
-   $arrPostcalcConfig = POSTCALC_CONF;
-   $postcalc_config_cache_dir =  $arrPostcalcConfig['cache_dir'];
+   $arrPostcalcConfig = unserialize(POSTCALC_CONF);
+   $unserialize(POSTCALC_CONF)ig_cache_dir =  $arrPostcalcConfig['cache_dir'];
    $arrStat=array();
-foreach (glob("$postcalc_config_cache_dir/postcalc_light_*.log") as $logfile ) {
+foreach (glob("$unserialize(POSTCALC_CONF)ig_cache_dir/postcalc_light_*.log") as $logfile ) {
     $fp_log=fopen($logfile,'r');
     while ( $logline = fgets($fp_log)) {
         list($date_time,$server,$time_elapsed,$size,$query_string)=explode("\t",$logline);
@@ -484,7 +484,7 @@ foreach (glob("$postcalc_config_cache_dir/postcalc_light_*.log") as $logfile ) {
     fclose($fp_log);
 }
 // Дополняем статистикой по ошибкам
-foreach (glob("$postcalc_config_cache_dir/postcalc_error_*.log") as $logfile ) {
+foreach (glob("$unserialize(POSTCALC_CONF)ig_cache_dir/postcalc_error_*.log") as $logfile ) {
     $fp_log=fopen($logfile,'r');
     while ( $logline = fgets($fp_log)) {
         list($date_time,$server,$time_elapsed,$error_short,$error_full)=explode("\t",$logline);
