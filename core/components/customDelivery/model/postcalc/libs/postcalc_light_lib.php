@@ -463,9 +463,9 @@ function postcalc_autocomplete($post_index, $limit = 10)
  */
 function postcalc_get_stat_arr() {
    $arrPostcalcConfig = unserialize(POSTCALC_CONF);
-   $unserialize(POSTCALC_CONF)ig_cache_dir =  $arrPostcalcConfig['cache_dir'];
+   $postcalc_config_cache_dir =  $arrPostcalcConfig['cache_dir'];
    $arrStat=array();
-foreach (glob("$unserialize(POSTCALC_CONF)ig_cache_dir/postcalc_light_*.log") as $logfile ) {
+foreach (glob("$postcalc_config_cache_dir/postcalc_light_*.log") as $logfile ) {
     $fp_log=fopen($logfile,'r');
     while ( $logline = fgets($fp_log)) {
         list($date_time,$server,$time_elapsed,$size,$query_string)=explode("\t",$logline);
@@ -484,7 +484,7 @@ foreach (glob("$unserialize(POSTCALC_CONF)ig_cache_dir/postcalc_light_*.log") as
     fclose($fp_log);
 }
 // Дополняем статистикой по ошибкам
-foreach (glob("$unserialize(POSTCALC_CONF)ig_cache_dir/postcalc_error_*.log") as $logfile ) {
+foreach (glob("$postcalc_config_cache_dir/postcalc_error_*.log") as $logfile ) {
     $fp_log=fopen($logfile,'r');
     while ( $logline = fgets($fp_log)) {
         list($date_time,$server,$time_elapsed,$error_short,$error_full)=explode("\t",$logline);
