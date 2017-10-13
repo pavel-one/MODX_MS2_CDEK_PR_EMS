@@ -22,10 +22,10 @@ function getPostCalc ($price, $weight, $city) {
 	$postcalc_country = 'RU';
 	$arrResponse = postcalc_request($postcalc_from, $postcalc_to, $postcalc_weight, $postcalc_valuation, $postcalc_country);
 	if ( !is_array($arrResponse) ) {
-		$this->modx->log(1, 'Ошибка postcalc '.$arrResponse);
+		$modx->log(1, 'Ошибка postcalc '.$arrResponse);
     if ( !is_array(error_get_last()) ){
         $arrError = error_get_last();
-        $this->modx->log(1, 'Массив ошибки postcalc '.print_r($arrResponse, 1));
+        $modx->log(1, 'Массив ошибки postcalc '.print_r($arrResponse, 1));
     };
     $textDeliveryCdek = 'Ошибка автоматического расчета Почты России, стоимость доставки посчитает для вас менеджер вручную.';
 	} else {
@@ -39,7 +39,7 @@ function getPostCalc ($price, $weight, $city) {
 	      'city' => $city
 	      );
 	  }
-		return $respons;
+	return $respons;
 	}
 }
 
