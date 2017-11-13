@@ -3,12 +3,12 @@ if(!class_exists('msDeliveryInterface')) {
     require_once dirname(dirname(dirname(dirname(__FILE__)))) . '/minishop2/model/minishop2/msdeliveryhandler.class.php';
 }
 
-//require_once __DIR__.'/libs/postcalc_light_lib.php';
+require_once __DIR__.'/libs/postcalc_light_lib.php';
 class postCalcDeliveryEms extends msDeliveryHandler implements msDeliveryInterface {
     public $modx;
     public $ms2;
     public function getCost(msOrderInterface $order, msDelivery $delivery, $cost = 0) {
-    	$this->modx->log(1, __DIR__.'/libs/postcalc_light_lib.php');
+    	//$this->modx->log(1, __DIR__.'/libs/postcalc_light_lib.php');
 		$cityName = $_SESSION['cityName'];
 		if (empty($cityName)) {
 			return $cost;
